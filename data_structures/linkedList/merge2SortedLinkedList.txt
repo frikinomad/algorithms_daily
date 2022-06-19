@@ -1,0 +1,23 @@
+MERGE(L1,L2,L3,NEXT,INFO,AVAIL).
+This procedure merges two NEXTed list L1 & L2 in L3.
+1.	Set L3: = NULL.
+2.	Repeat Step 3 While L1 != NULL and L2 != NULL:
+3.		If INFO [L1] < INFO [L2], then:
+			Call ADDLAST(L3,INFO,NEXT,AVAIL,INFO[L1]).
+			Set L1:=NEXT[L1].
+		Else:
+			Call ADDLAST(L3,INFO,NEXT,AVAIL,INFO[L2]).
+			Set L2:=NEXT[L2].
+		[End of If Structure.]
+	[End of Step 2 Loop].
+4.	[Remaining of First list]
+	Repeat steps while L1 != NULL:
+		Call ADDLAST(L3,NEXT,INFO,AVAIL,INFO[L2]).
+		Set L1: = NEXT [L1].
+	[End of Step 4 Loop].
+5.	[Remaining of Second list]
+	Repeat Steps While L2 != NULL:
+		Call ADDLAST(L3,NEXT,INFO,AVAIL,INFO[L2]).
+		Set L2:=NEXT[L2]
+	[End of Step 5 Loop].
+6.	Return.

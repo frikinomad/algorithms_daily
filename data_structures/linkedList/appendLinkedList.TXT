@@ -1,0 +1,16 @@
+APPEND(START,INFO,NEXT,ITEM,AVAIL)
+This Algo add a node to the end of the linked list.
+1.	If START=NULL,then: Write: OVERFLOW and Return.
+2.	Set NEW:=AVAIL, AVAIL:=NEXT[AVAIL].
+3.	Set NEXT[NEW]:=NULL.
+4.	Set INFO[NEW]:=ITEM.
+5.	If START=NULL,then:
+		Set START:=NEW.
+	Else:
+		Set PTR:=START.
+		Repeat Step While NEXT[PTR]!=NULL.
+			Set PTR:=NEXT[PTR].
+		[End of loop.]
+		Set NEXT[PTR]:=NEW.
+	[End of if structure.]
+6.	Return. 

@@ -1,0 +1,15 @@
+INSERTIONSORT(A,N)
+This procedure sorts the array A having number of elements N using 
+Insertion Sort method.
+1.	Repeat steps 2 to 5 for I=2 to N:
+2.		Set A[I]:=ITEM.
+3.		Set J:=I-1.
+4.		Repeat Steps while J>=1 AND A[J]>ITEM:
+			i)	Set A[J+1]:=A[J].
+			ii)	Set J:=J-1.
+		[End of step 3 loop.]
+5.		Set A[J+1]:=ITEM. 
+		//if a[J]>item , shifting will happen & here first
+		J-- will happen and this J+1 will bring J to that same pos
+	[End of step 1 loop.]
+6.	Return.

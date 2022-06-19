@@ -1,0 +1,45 @@
+ADDFIRSTQUEUE(FRONT1,REAR1,REAR2,ITEM,QUEUE)
+1.	If REAR1+1=REAR2, then: Write OVERFLOW and Return.
+2.	If FRONT1=0, then:
+		Set FRONT1:=1, REAR1:=1.
+	Else:
+		Set REAR1:=REAR1+1.
+	[End of if structure.]
+3.	Set QUEUE[REAR1]:=ITEM.
+4.	Return.
+
+//////////**********//////////**********
+
+ADDSECONDQUEUE(QUEUE,FRONT2,REAR2,REAR1,ITEM)
+1.	If REAR1+1=REAR2, then: Write OVERFLOW and Return.
+2.	If FRONT2=MAXQ+1, then:
+		Set FRONT2:=MAXQ, REAR2:=MAXQ.
+	Else:
+		Set REAR2:=REAR2-1.
+	[End of if structure.]
+3.	Set QUEUE[REAR2]:=ITEM.
+4.	Return.
+
+//////////**********//////////**********
+
+DELFIRST(QUEUE,FRONT1,REAR1,REAR2,ITEM)
+1.	If FRONT1=0, then Write UNDERFLOW and Return.
+2.	Set ITEM:=QUEUE[FRONT1].
+3.	If FRONT1=REAR1, then:
+		Set REAR1:=0,FRONT1:=0.
+	Else:
+		Set FRONT1:=FRONT1+1.
+	[End of if structure.]
+4.	Return.
+
+//////////**********//////////**********
+
+DELSECOND(FRONT2,REAR2,ITEM,QUEUE)
+1.	If FRONT2=MAXQ+1, then UNDERFLOW and Return.
+2.	ITEM:=QUEUE[FRONT2].
+3.	If FRONT2=REAR2, then:
+		Set FRONT2:=MAXQ+1, REAR2:=MAXQ+1.
+	Else:
+		Set FRONT2:=FRONT2-1.
+	[End of if structure.]
+4.	Return.

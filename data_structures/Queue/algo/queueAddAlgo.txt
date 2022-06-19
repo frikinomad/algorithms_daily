@@ -1,0 +1,12 @@
+ADDQ(QUEUE,MAXQ,FRONT,REAR,ITEM)
+This procedure insert a new ITEM at the REAR of the QUEUE.
+1.	[Check Overflow]
+	If REAR==MAXQ, then: Write "OVERFLOW" and Return.
+2.	[Incement REAR]
+	If FRONT:=0, then: [QUEUE empty]
+		Set FRONT:=1 , REAR:=1.
+	Else: 
+		Set REAR:=REAR+1.
+	[End of if structure.]
+3.	Set QUEUE[REAR]:=ITEM.
+4.	Return.

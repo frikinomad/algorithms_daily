@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "mergeSortRec.C": "cpp",
+        "mergeSortNonRec.C": "cpp"
+    }
+}

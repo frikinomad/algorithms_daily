@@ -1,0 +1,13 @@
+ADDRIGHT(QUEUE,RIGHT,LEFT,ITEM,MAXQ)
+1.	If LEFT=1 and RIGHT=MAXQ or RIGHT+1=LEFT, then:
+		Write OVERFLOW and return.
+	[End of if structure.]
+2.	If LEFT=0, then:
+		Set LEFT:=1, RIGHT:=1.
+	Else If RIGHT=MAXQ, then:
+		Set RIGHT:=1.
+	Else:
+		Set RIGHT:=RIGHT+1.
+	[End of if structure.]
+3.	Set QUEUE[RIGHT]:=ITEM.
+4.	Return.

@@ -1,0 +1,9 @@
+POP(TOP,STACK,ITEM)
+This procedure removes the TOP element from the STACK and return to variable
+ITEM.
+1.	If TOP==0, then:
+		Write "Underflow" and Return.
+	[End of if structure.]
+2.	Set STACK[TOP]:=ITEM.
+3.	Set TOP:=TOP-1.
+4.	Return.

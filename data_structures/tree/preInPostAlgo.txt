@@ -1,0 +1,26 @@
+PREORDER(ROOT,INFO,LEFT,RIGHT)
+This procedure traverse the tree in PREORDER using recursion.
+1.	If ROOT=NULL, then Return.
+2.	Apply procedure on INFO[ROOT].
+3.	call PREORDER(LEFT[ROOT],INFO,LEFT,RIGHT).
+4.	call PREORDER(RIGHT[ROOT]),INFO,LEFT,RIGHT).
+5.	Return.
+
+//////////************//////////
+
+INORDER(ROOT,INFO,LEFT,RIGHT)
+This procedure traverse the Tree in INORDER using recursion.
+1.	If ROOT==NULL, then Return.
+2.	call INORDER(LEFT[ROOT],INFO,LEFT,RIGHT).
+3.	Apply process on INFO[ROOT].
+4.	call INORDER(RIGHT[ROOT],INFO,LEFT,RIGHT).
+5.	Return.
+
+//////////************//////////
+
+POSTORDER(ROOT,INFO,LEFT,RIGHT)
+1.	If ROOT==NULL, then Return.
+2.	call POSTORDER(LEFT[ROOT],INFO,LEFT,RIGHT).
+3.	call POSTORDER(RIGHT[ROOT],INFO,LEFT,RIGHT).
+4.	Apply process on INFO[ROOT].
+5.	Return.

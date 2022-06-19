@@ -1,0 +1,18 @@
+SELECTIONSORT(A,N)
+This program sort a given array A with number of elements N using the 
+Selection Sort method.
+1.	Repeat steps for I:=0 to N-1.
+2.		Set MINPOS:= I.
+3.		Repeat step for J:=I+1 to N:
+			i)	If A[J]<A[MINPOS], then:
+					Set MINPOS:=J
+				[End of If structure.]
+		[End of step 3 loop.]
+4.		If I != MINPOS, then:
+		i).	Set T := A[I].
+		ii).	Set A[I] := A[MINPOS].
+		iii).	Set A[MINPOS] := T.
+		[End of if Structure.]
+	[End of step 1 loop.]
+4.	Return.
+		

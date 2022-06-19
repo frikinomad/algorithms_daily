@@ -1,0 +1,42 @@
+TOWER (N, BEG, AUX, END)
+	This is a non-recursive solution to the Tower of 
+	Hanoi problem for N disks which is obtained by 
+	translating the recursive solution. Stacks STN, 
+	STSRC, STTARG, STAUX and STADD will correspond 
+	respectively, to the variables N, BEG, AUX, 
+	END and ADD.
+0.	Set TOP:= NULL. [Initially all stacks are empty]
+1.	If N = 1, then:
+	(a)	Write: BEG -> END.
+	(b)	Go to Step 5
+	[End of If structure]
+2.	[Translation of “Call TOWER(N-1, BEG, END, AUX)”]
+		[Push current values and new return address onto stacks.]
+	(i)	Set TOP: = TOP + 1.
+	(ii)	Set STN[TOP]: = N, STBEG[TOP]: = BEG,
+		STEND[TOP]: = END, STAUX[TOP]: = AUX, 
+		STADD[TOP]: = 3.
+	[Reset Parameters.]
+	(iii)	Set N: = N – 1, BEG: = BEG, 
+		AUX: = END, END: = AUX.
+	(iv)	Go to Step 1.
+3.	Write: BEG -> END.
+4.	[Translation of “Call TOWER(N-1, AUX, BEG, END)”]
+		[Push current values and new return address onto stacks.]
+	(i)	Set TOP: = TOP + 1.
+	(ii)	Set STN[TOP]: = N, STBEG[TOP]: = BEG, 
+		STEND[TOP]: = END, STAUX[TOP]: = AUX, 
+		STADD[TOP]: = 5
+		[Reset Parameters.]
+	(iii)	Set N: = N – 1, BEG:= AUX, AUX: = BEG, 
+		END = END.
+	(iv)	Go to Step 1.
+5.	[Translation of “Return”]
+	If TOP: = NULL, then Return.
+		[Restore top values on stacks.]
+	(i)	Set N: = STN[TOP], BEG: = STBEG[TOP], 
+		END: = STEND[TOP], AUX: = STAUX[TOP],
+		ADD: = STADD[TOP].
+	(ii)	Set TOP: = TOP – 1.
+	(iii)	Go to Step ADD.
+	[End of If Structure.]

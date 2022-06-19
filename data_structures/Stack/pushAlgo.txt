@@ -1,0 +1,8 @@
+PUSH(STACK,TOP,MAXSTK,ITEM)
+This algo adds an element to the top of the Stack.
+1.	If TOP=MAXSTK, then: 
+		Write "Overflow", and Return.
+ 	[End of if structure.]
+2.	Set TOP:=TOP+1.
+3.	Set STACK[TOP]:=ITEM.
+4.	Return.

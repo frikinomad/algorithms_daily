@@ -1,0 +1,39 @@
+EVALPOST(P, VALUE)
+This algorithm finds the VALUE of an arithmetic expression P written in postfix notation.
+
+1. Add a right parenthesis “)” at the end of P. 
+		[This acts as a sentinel value.]
+2. Scan P from left to right and Repeat Steps 3 and 4 
+   for each  element of P until the sentinel “)” is encountered.
+3.     If an operand is encountered, push it on STACK.
+4.     If an operator op is encountered, then:
+		(a) Remove the two top elements of STACK, 
+		    where A is the top element and B is 
+		    the next-to-top element.
+		(b) Evaluate B op A.
+		(c) Place the result of (b) back on STACK.
+       [End of If structure.]
+   [End of Step 2 loop.]
+5. Set VALUE equal to the top element on STACK.
+6. Return.
+
+**************************-------------------******************************
+
+EVALPRE (P, VALUE)
+This algorithm finds the VALUE of an arithmetic expression 
+P written in prefix notation.
+1.	Add a left parenthesis “(” at the beg of P. 
+	[This acts as a sentinel.]
+2.	Scan P from right to left and Repeat Steps 3 and 4 
+	for each  element of P until the sentinel “(” is encountered.
+3.	     If an operand is encountered, push it on STACK.
+4.	     If an operator op is encountered, then:
+		(a) Remove the two top elements of STACK, 
+		    where A is the top element and B is the 
+		    next-to-top element.
+		(b) Evaluate A op B.
+		(c) Place the result of (b) back on STACK.
+	      [End of If structure.]
+      	[End of Step 2 loop.]
+5.	Set VALUE equal to the top element on STACK.
+6. 	Return.

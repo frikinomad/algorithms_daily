@@ -1,0 +1,159 @@
+Circular Doubly Linked List:-
+A circular doubly linked list or a circular two-way linked list is a more complex type of linked list which contains a pointer to 
+the next as well as the previous node in the sequence.The difference between a doubly linked and a circular doubly linked list is 
+same as that exists between a singly linked list and a circular linked list. The circular doubly linked list does not contain NULL 
+in the previous field of the first node and the next field of the last node. Rather, the next field of the last node stores the address 
+of the first node of the list, i.e., START. Similarly, the previous field of the first field stores the address of the last node.
+Since a circular doubly linked list contains three parts in its structure, it calls for more space per node and more expensive basic operations.
+However, a circular doubly linked list provides the ease to manipulate the elements of the list as it maintains pointers to nodes in both 
+the directions (forward and backward). The main advantage of using a circular doubly linked list is that it makes search operation twice as efficient.
+
+TRAVERSE(START,INFO,NEXT)
+This procedure traverses the circular doubly link list starting from START and apply a PROCESS on INFO of each node.
+1.	If START=NULL, then: Return.
+2.	Set PTR:=START.
+3.	Apply a PROCESS on INFO[PTR].
+4.	Set PTR:=NEXT[PTR].
+5.	If PTR!=START then: 
+		Goto step 3.
+	Else:	
+		Goto step 6.
+	[End of If structure.]
+6.	Return.
+
+////////////////////***********////////////////////
+
+COUNT(START,INFO,NEXT,CNT)
+This procedure counts the number of nodes in the circular doubly linked list and stores the result in CNT.
+1.	Set CNT:=0. 		[Initialize counter.]
+2.	If START=NULL, then Return.
+3.	Set PTR:=START. 	[Initializes pointer PTR.]
+4.	Set CNT:=CNT+1.		
+5.	Set PTR:=NEXT[PTR]. 	[PTR now points to the next node.]
+6.	If PTR!=START ,then:
+		Goto step 4.
+	Else:
+		Goto step 6.
+	[End of if structure.]
+7.	Return.
+
+////////////////////***********////////////////////
+
+SEARCH(START,INFO,NEXT,ITEM,LOC)
+This algorithm finds the location LOC of the node where ITEM first appears in circular doubly linked list, or sets LOC: = NULL if ITEM not found.
+1.	Set LOC:=NULL.
+2.	If START=NULL then Return.		[If list is empty]
+3.	Set PTR:=START.
+4.	Repeat Step 5 While INFO[PTR]!=ITEM:
+5.		Set PTR:=NEXT[PTR].
+6.		If PTR=START, then Goto step 7.
+	[End of Step 4 loop.]
+7.	If ITEM=INFO[PTR], then: 		[Searching the last node]
+		Set LOC:=PTR, and Return.	
+	[End of If Structure.]
+8.	Return.
+
+////////////////////***********////////////////////
+
+ADDFIRST(START,INFO,PREV,NEXT,ITEM,AVAIL)
+This procedure adds a new node at the beginning of circular doubly linked list.
+1.	If AVAIL=NULL, then: Write: OVERFLOW and Return.	[OVERFLOW?]
+2.	Set NEW:=AVAIL, AVAIL:=NEXT[AVAIL].	[Remove the first node from AVAIL.]
+3.	Set INFO[NEW]:=ITEM.
+4.	If START=NULL, then:			[If list is empty]
+		Set START:=NEW,PREV[NEW]:=START,NEXT[NEW]:=START and Return.
+	[End of If Structure.]
+5.	Set NEXT[NEW]:=START,PREV[NEW]:=PREV[START].
+6.	Set NEXT[PREV[START]]:=NEW,PREV[START]:=NEW.
+7	Set START:=NEW.
+8.	Return.
+
+////////////////////***********////////////////////
+
+ADDLAST(START,INFO,PREV,NEXT,ITEM,AVAIL)
+This procedure adds a new node at the ending of circular linked list.
+1.	If AVAIL=NULL, then: Write: OVERFLOW and Return.	[OVERFLOW?]
+2.	Set NEW:=AVAIL, AVAIL:=NEXT[AVAIL].	[Remove the first node from AVAIL.]
+3.	Set INFO[NEW]:=ITEM.
+4.	If START=NULL, then:			[If list is empty]
+		Set START:=NEW,PREV[NEW]:=START,NEXT[NEW]:=START and Return.
+	[End of If Structure.]
+5.	Set NEXT[NEW]:=START,PREV[NEW]:=PREV[START].
+6.	Set NEXT[PREV[START]]:=NEW,PREV[START]:=NEW.
+7.	Return.
+
+////////////////////***********////////////////////
+
+ADDAFTER(START,INFO,PREV,NEXT,ITEM,AVAIL,NUM)
+This procedure adds a new node ITEM after a node containing value NUM in a circular doubly linked list.
+1.	If START=NULL, then:
+		Write "Number not found" and Return.
+	[End of If Structure.]
+2.	If AVAIL=NULL, then: Write: OVERFLOW and Return.	
+3.	Set PREPTR:=START,PTR:=NEXT[START].
+4.	Repeat steps 5 and 6 while PTR != START and INFO[PREPTR]!=NUM:
+5.		set PREPTR:=PTR.
+6.		set PTR:=NEXT[PTR].
+	[End of step 6 loop.]
+7.	If INFO[PREPTR]=NUM, then:
+		Set NEW:=AVAIL, AVAIL:=NEXT[AVAIL].	
+		Set INFO[NEW]:=ITEM.
+		Set NEXT[PREPTR]:=NEW,PREV[NEW]:=PREPTR.
+		Set NEXT[NEW]:=PTR,PREV[PTR]:=NEW.
+	Else:
+		Write "Number not found".
+	[End of If structure.]
+10.	Return.
+
+////////////////////***********////////////////////
+
+ADDBEFORE(START,INFO,PREV,NEXT,ITEM,AVAIL,NUM)
+This procedure adds a new node ITEM just before a node containing value NUM in a circular doubly linked list.
+1.	If START=NULL, then:
+		Write "Number not found" and Return.
+	[End of If Structure.]
+2.	If AVAIL=NULL, then: Write: OVERFLOW and Return.	
+3.	Set PREPTR:=START,PTR:=NEXT[START].
+4.	Repeat steps 5 and 6 while PTR != START and INFO[PTR]!=NUM:
+5.		set PREPTR:=PTR.
+6.		set PTR:=NEXT[PTR].
+	[End of step 6 loop.]
+7.	If INFO[PTR]=NUM, then:
+		Set NEW:=AVAIL, AVAIL:=NEXT[AVAIL].	
+		Set INFO[NEW]:=ITEM.
+		Set NEXT[PREPTR]:=NEW,PREV[NEW]:=PREPTR.
+		Set NEXT[NEW]:=PTR,PREV[PTR]:=NEW.
+		If PTR=START, then: START:=NEW.	[If adding before first node.]
+	Else:
+		Write "Number not found".
+	[End of If structure.]
+8.	Return.
+
+////////////////////***********////////////////////
+
+DELNODE(START,INFO,NEXT,ITEM,AVAIL)
+This procedure removes a node containing value ITEM from a circular linked list.
+1.	If START=NULL, then: Write "Item not found" and Return.
+2.	If INFO[START]=ITEM, then:
+		If NEXT[START]=START, then:	[If only one node]
+			Set START:=NULL.
+		Else: 				[If more than one nodes]
+			Set PREV[NEXT[START]]:=PREV[START].
+			Set NEXT[PREV[START]]:=NEXT[START].
+			Set START:=NEXT[START].
+		[End of If Structure.]
+		Set NEXT[PTR]=AVAIL, AVAIL=PTR.		[Free the node]
+		Return.
+	[End of If structure.]
+3.	Set PREPTR=START, PTR=NEXT[START].
+4.	Repeat steps 5 and 6 while PTR != START and INFO[PTR]!=ITEM:
+5.		Set PREPTR:=PTR.
+6.		Set PTR:=NEXT[PTR].
+	[End of step 4 loop.]
+7.	If INFO[PTR]=ITEM, then:
+		Set NEXT[PREPTR]=NEXT[PTR],PREV[NEXT[PTR]]:=PREPTR.
+		Set NEXT[PTR]=AVAIL, AVAIL=PTR.		[Free the node]
+	Else:
+		Write "Item not found in the list.".
+	[End of If structure.]
+8.	Return.

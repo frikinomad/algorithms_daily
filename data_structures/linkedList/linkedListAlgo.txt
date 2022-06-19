@@ -1,0 +1,74 @@
+ADDBEFORE(START,INFO,NEXT,ITEM,AVAIL,NUM)			//ITEM: which is to be inserted NUM: before which ITEM is to be inserted
+This procedure adds a new node with ITEM before the given NUM.
+1.	If AVAIL=NULL,then: 
+		Write: "OVERFLOW" and Return.
+	[End of if Structure.]
+2.	If START=NULL,then:
+		Write: "NUM not found" and Return.
+	[End of if Structure.]
+3.	Set POSTPTR:=Start.
+	Set PTR:=NEXT[START].
+4.	Repeat Step while INFO[POSTPTR]!=NUM || POSTPTR!=NULL:
+		Set POSTPTR:=NEXT[POSTPTR].
+		Set PTR:=NEXT[PTR].
+	[End of loop.]
+5.	If PTR!=NULL, then:
+		Set AVAIL:=NEXT[AVAIL].
+		Set NEW:=AVAIL. 
+		Set INFO[NEW]:=ITEM.
+		SET NEXT[NEW]:=POSTPTR.
+		Set NEXT[PTR]:=NEW.
+	Else:
+		Write "Number not found".
+6.	Return.
+
+///////////////////***********************///////////////////
+
+DELETE(START,NEXT,INFO,ITEM,AVAIL)
+This procedure delete the first occurence of ITEM.
+1.	If START=NULL,then: 
+		Write: "Item not found" and Return.
+2.	Set PREPTR:=START.
+	Set PTR:=NEXT[START].
+3.	Repeat step while INFO[PTR]=ITEM:
+		Set PREPTR:=NEXT[PREPTR].
+		Set PTR:=NEXT[PTR].
+4.	Set NEXT[PREPTR]:=NEXT[PTR].
+5.	If AVAIL==NULL,then:
+		Set PTR:=AVAIL.
+	Else:
+		Set AVAIL:=NEXT[AVAIL].
+		Set PTR:=AVAIL.
+6.	Return.
+
+///////////////////***********************///////////////////
+
+
+SORTING(START,NEXT,INFO)
+1.	If START==NULL,then:
+		Write: "Item not found" and Return.
+2.	Set P1:=START.
+3. 	Repeat step while P1!=NULL:
+		Set P2:=NEXT[P1].
+		Repeat step while P2!=NULL:
+			If INFO[P1]>INFO[P2],then:
+				Set T:=INFO[P1].
+				Set INFO[P1]:=INFO[P2].
+				Set INFO[P2]:=T.
+			[End of if structure.]
+			Set P2:=NEXT[P2].
+		[End of loop.]
+		Set P1:=NEXT[P1].
+	[End of loop.]
+4.	Return.
+
+///////////////////***********************///////////////////
+
+REVERSE(START,NEXT,INFO)
+1.	If START==NULL,then:
+		Write "List is sorted" and Return.
+2.	Set PTR:=START , PREPTR:=NULL.
+3.	Repeat step while, PTR!=NULL:
+		Set POSTPTR:=PREPTR.
+		Set  
+

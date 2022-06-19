@@ -1,0 +1,28 @@
+ADDQ(FRONT, REAR, AVAIL, NEXT, INFO, ITEM)
+This procedure adds a new element in the REAR of a QUEUE using the link list.
+1.	[OVERFLOW?]
+	If AVAIL=NULL, then: Write: OVERFLOW and Return.
+2.	Set NEW:=AVAIL,AVAIL:=NEXT[AVAIL].
+3.	Set INFO[NEW]:=ITEM,NEXT[NEW]:=NULL.
+4.	If REAR:=NULL, then:
+	Set FRONT:=NEW, REAR:=NEW.
+5.	Else:
+		Set NEXT[REAR]:=NEW.
+		Set REAR:=NEW.
+	[End of If structure.]
+6.	Return.
+
+DELQ(FRONT,REAR,NEXT,INFO,ITEM)
+This procedure removes the FRONT element of a QUEUE using the linked list.
+1.	[UNDERFLOW?]
+	If REAR=NULL, then: Write: UNDERFLOW and Return.
+2.	Set PTR:=FRONT.
+3.	If FRONT=REAR Then
+		Set FRONT:=NULL, REAR:=NULL.
+4.	Else:
+		Set FRONT:=LINK[FRONT].
+	[End of If Structure]		
+5.	Set ITEM:=INFO[PTR].
+6.	Set NEXT[PTR]:=AVAIL.
+7.	Set AVAIL:=PTR.
+8.	Return.

@@ -1,0 +1,8 @@
+PEEP(TOP,STACK,ITEM)
+This program shows the TOP element of the STACK without removing the 
+element and storing it in ITEM.
+1.	If TOP==0, then:
+		Write "Underflow" and Return.
+	[End of if structure.]
+2.	Set ITEM:=STACK[TOP].
+3.	Return.

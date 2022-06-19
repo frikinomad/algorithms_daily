@@ -1,0 +1,46 @@
+MERGE_SORT ( A , N )
+Here A is an array with N elements. This algorithm sorts the array A with N elements in ascending order.
+1.	Set SIZE:= 1.
+2.	Repeat Steps 3 to 7 While SIZE < N:
+3.	    Set L1:= 1 , K:= 1.
+4.	    Repeat Steps While ( L1 + SIZE ) <= N:
+		(a)	Set L2:= L1 + SIZE.
+		(b)	Set U1:= L2 - 1.
+		(c)	If U1 + SIZE <= N, then:
+				Set U2 := U1 + SIZE.
+			Else:
+				Set U2 := N .
+			[ End of if structure. ]
+		(e)	Repeat Steps For I:= L1 to U1 and J:= L2 to U2:
+				If A [ I ] < A [ J ], then:
+				        (i) Set TEMP [ K ]:= A [ I ].
+				        (ii) Set I:= I + 1.
+				Else:
+				        (i) Set TEMP [ K ]:= A [ J ].
+				        (ii) Set J:= J + 1.
+				[ End of if structure. ]
+				Set K:= K + 1.
+			[ End of Step (e) loop. ]
+		(f)	Repeat Steps While I <= U1:
+				(i)	Set TEMP [ K ]:= A [ I ].
+				(ii)	Set K:= K + 1.
+				(iii)	Set I:= I + 1.
+			[ End of Step (f) loop. ]
+		(g)	Repeat Steps While J <= U2:
+				(i)	Set TEMP [ K ]:= A [ J ].
+				(ii)	Set K:= K + 1.
+				(iii)	Set J:= J + 1.
+			[ End of Step (g) loop. ]
+		(h)	Set L1:= U2 + 1.
+	      [ End of Step 4 loop. ]
+5.	      Repeat Steps While L1 <= N:
+		(i)	Set TEMP [ L1 ]:= A [ L1 ].
+		(ii)	Set L1:= L1 + 1.
+	      [End of Step 5 loop. ]
+6.	      Repeat Steps For I:= 1 to N:
+		(i)	Set A [ I ]:= TEMP [ I ].
+		(ii)	Set I:= I + 1.
+	      [End of Step 6 loop. ]
+7.	     Set SIZE:= SIZE * 2.
+	[ End of Step 2 loop. ]
+8.	Return.

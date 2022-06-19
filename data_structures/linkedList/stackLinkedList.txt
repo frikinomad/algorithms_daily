@@ -1,0 +1,21 @@
+PUSH (TOP, AVAIL, NEXT, INFO, ITEM)
+This procedure adds a new element at the TOP of a STACK using the link list.
+1.	[OVERFLOW?]
+	If AVAIL = NULL, then: Write: OVERFLOW and Return.
+2.	[Remove the first node from AVAIL list.]
+	Set NEW:=AVAIL, AVAIL:=NEXT[AVAIL].
+3.	Set INFO[NEW]:=ITEM.
+4. 	Set NEXT[NEW]:=TOP.
+5.	Set TOP:=NEW.
+6.	Return.
+
+POP(TOP,NEXT,INFO,ITEM)
+This procedure removes the element form the TOP of a stack using the link list.
+1.	[UNDERFLOW?]
+	If TOP=NULL, then: write: UNDERFLOW and Return.
+2.	Set PTR:=TOP.
+3.	Set TOP:=NEXT[TOP].
+4.	Set ITEM:=INFO[PTR].
+5.	Set NEXT[PTR]:=AVAIL.
+6.	Set AVAIL:=PTR.
+7.	Return.

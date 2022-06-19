@@ -1,0 +1,11 @@
+REVERSE(START, NEXT)
+This procedure reverses a link list.
+1.	Set P3: = START, P2 = NULL.
+2.	Repeat Steps 3 to 6, While P3 != NULL:
+3. 		Set P1: = P2.
+4. 		Set P2: = P3.
+5. 		Set P3: = NEXT[P3].
+6. 		Set NEXT[P2]: = P1.
+	[End of step 2 loop.]
+7.	Set START:= P2.
+8.	Return.

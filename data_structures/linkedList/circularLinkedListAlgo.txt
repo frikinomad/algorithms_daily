@@ -1,0 +1,158 @@
+Circular Linked List using tail node
+
+TRAVERSE(TAIL,INFO,NEXT)
+This procedure traverses the circular link and apply a PROCESS on INFO of each node.
+1.	If TAIL=NULL, then: Write "List is empty" and Return.
+2.	Set PTR:=NEXT[TAIL].
+3.	Apply a PROCESS on INFO[PTR].
+4.	Set PTR:=NEXT[PTR].
+5.	If PTR!=NEXT[TAIL] then: 
+		Goto step 3.
+	Else:	
+		Goto step 6.
+	[End of If structure.]
+6.	Return.
+
+////////////////////***********////////////////////
+
+COUNT(TAIL,INFO,NEXT,CNT)
+This procedure counts the number of nodes in the circular linked list and stores the result in CNT.
+1.	Set CNT:=0. 		[Initialize counter.]
+2.	If TAIL=NULL, then Return.
+3.	Set PTR:=NEXT[TAIL]. 	[Initializes pointer PTR.]
+4.	Set CNT:=CNT+1.		
+5.	Set PTR:=NEXT[PTR]. 	[PTR now points to the next node.]
+6.	If PTR!=NEXT[TAIL] ,then:
+		Goto step 4.
+	Else:
+		Goto step 6.
+	[End of if structure.]
+7.	Return.
+
+////////////////////***********////////////////////
+
+SEARCH(TAIL,INFO,NEXT,ITEM,LOC)
+This algorithm finds the location LOC of the node where ITEM first appears in circular linked list, or sets LOC: = NULL if ITEM not found.
+1.	Set LOC:=NULL.
+2.	If TAIL=NULL then Return.		[If list is empty]
+3.	Set PTR:=NEXT[TAIL].
+4.	Repeat Step 5 While INFO[PTR]!=ITEM:
+5.		Set PTR:=NEXT[PTR].
+6.		If PTR=NEXT[TAIL], then Goto step 7.
+	[End of Step 4 loop.]
+7.	If ITEM=INFO[PTR], then: 		[Searching the last node]
+		Set LOC:=PTR, and Return.	
+	[End of If Structure.]
+8.	Return.
+
+////////////////////***********////////////////////
+
+ADDFIRST(TAIL,INFO,NEXT,ITEM,AVAIL)
+This procedure adds a new node at the beginning of circular linked list.
+1.	If AVAIL=NULL, then: Write: OVERFLOW and Return.	[OVERFLOW?]
+2.	Set NEW:=AVAIL, AVAIL:=NEXT[AVAIL].	[Remove the first node from AVAIL.]
+3.	Set INFO[NEW]:=ITEM.
+4.	If TAIL=NULL, then:
+		Set TAIL:=NEW and NEXT[NEW]:=TAIL and Return.
+	[End of If Structure.]
+6.	Set NEXT[NEW]:=NEXT[TAIL].
+7	Set NEXT[TAIL]:=NEW.
+8.	Return.
+
+////////////////////***********////////////////////
+
+ADDLAST(TAIL,INFO,NEXT,ITEM,AVAIL)
+This procedure adds a new node at the ending of circular linked list.
+1.	If AVAIL=NULL, then: Write: OVERFLOW and Return.	[OVERFLOW?]
+2.	Set NEW:=AVAIL, AVAIL:=NEXT[AVAIL].	[Remove the first node from AVAIL.]
+3.	Set INFO[NEW]:=ITEM.
+4.	If TAIL=NULL, then:
+		Set TAIL:=NEW and NEXT[NEW]:=TAIL and Return.
+	[End of If Structure.]
+5.	Set NEXT[NEW]:=NEXT[TAIL].
+6.	Set NEXT[TAIL]:=NEW.
+7.	Set TAIL:=NEW.
+8.	Return.
+
+////////////////////***********////////////////////
+
+ADDAFTER(TAIL,INFO,NEXT,ITEM,AVAIL,NUM)
+This procedure adds a new node ITEM after a node containing value NUM in a circular linked list.
+1.	If TAIL=NULL, then:
+		Write "Number not found" and Return.
+	[End of If Structure.]
+2.	If AVAIL=NULL, then: Write: OVERFLOW and Return.	[OVERFLOW?]
+3.	Set PTR:=NEXT[TAIL].
+4.	If INFO[PTR]=NUM , then: GoTo Step 7.
+5.	set PTR:=NEXT[PTR].
+6.	If PTR != NEXT[TAIL] , then: 	[Check of termination]
+		GoTo Step 4.
+	Else:
+		GoTo Step 7.
+	[End of If structure.]
+7.	If INFO[PTR]=NUM, then:
+		Set NEW:=AVAIL, AVAIL:=NEXT[AVAIL].	
+		Set INFO[NEW]:=ITEM.
+		Set NEXT[NEW]:=NEXT[PTR].
+		Set NEXT[PTR]:=NEW.
+		If PTR=TAIL, then: Set TAIL=NEW.
+	Else:
+		Write "Number not found".
+	[End of If structure.]
+8.	Return.
+
+////////////////////***********////////////////////
+
+ADDBEFORE(TAIL,INFO,NEXT,ITEM,AVAIL,NUM)
+This procedure adds a new node ITEM just before a node containing value NUM in a circular linked list.
+1.	If TAIL=NULL, then:
+		Write "Number not found" and Return.
+	[End of If Structure.]
+2.	If AVAIL=NULL, then: Write: OVERFLOW and Return.	
+3.	Set PREPTR:=TAIL,PTR:=NEXT[TAIL].
+4.	If INFO[PTR]=NUM, then GoTo Step 8.
+5.	set PREPTR:=PTR.
+6.	set PTR:=NEXT[PTR].
+7.	If PTR !=NEXT[TAIL], then:
+		Goto step 4.
+	Else:
+		Goto step 8.
+	[End of If structure.]
+8.	If INFO[PTR]=NUM, then:
+		Set NEW:=AVAIL, AVAIL:=NEXT[AVAIL].	
+		Set INFO[NEW]:=ITEM.
+		Set NEXT[PREPTR]:=NEW.
+		Set NEXT[NEW]:=PTR.
+	Else:
+		Write "Number not found".
+	[End of If structure.]
+9.	Return.
+
+////////////////////***********////////////////////
+
+DELNODE(TAIL,INFO,NEXT,ITEM,AVAIL)
+This procedure removes a node containing value ITEM from a circular linked list.
+1.	If TAIL=NULL, then: Write "Item not found" and Return.
+2.	Set PREPTR=TAIL, PTR=NEXT[TAIL].
+3.	If INFO[PTR]=ITEM ,then: Goto step 7.
+4.	Set PREPTR:=PTR.
+5.	Set PTR:=NEXT[PTR].
+6.	If PTR != NEXT[TAIL], then:
+		Goto step 3.
+	Else:
+		Goto step 7.
+	[End of If structure.]
+7.	If INFO[PTR]=ITEM, then:
+		Set NEXT[PREPTR]=NEXT[PTR].
+		If PTR=TAIL, then: 			[If ITEM Found at start]
+			If PTR=NEXT[TAIL], then:	[If only one node]
+				Set TAIL:=NULL.
+			Else: 				[If more than one nodes]
+				set TAIL:=PREPTR.
+			[End of If Structure.]
+		[End of If structure.]
+		Set NEXT[PTR]=AVAIL, AVAIL=PTR.		[Free the node]
+	Else:
+		Write "Item not found in the list.".
+	[End of If structure.]
+6.	Return.

@@ -1,0 +1,32 @@
+QUICKSORT(A,LB,UB)
+Here A is an array with LB lower bound and UB upper bound. This algorithm sorts the A array in ascending order.
+1.	Set MID:=0.
+2.	If LB>=UB, then Return.
+3.	Call PARTITION(A,LB,UB,MID).
+4.	Call QUICKSORT(A,LB,MID-1).
+5.	Call QUICKSORT(A,MID+1,UB).
+6.	Return.
+
+PARTITION(A,LB,UB,MID)
+Here A is an array with LB lower bound and UB upper bound. This algorithm assigns the mid value of the total elements in the array in the MID.
+1.	Set DOWN:=LB.
+2.	Set UP:=UB.
+3.	Set PIVOT:=A[DOWN].
+4.	Repeat Steps 5 to 9 While DOWN < UP:
+5. 	     	Repeat Step (a) While A[DOWN] <= PIVOT AND DOWN < UB:
+		(a)	Set DOWN:= DOWN + 1.
+     		[End of Step 5 loop. ]
+6.	     	Repeat Step (a) While A[UP] > PIVOT:
+		(a)	Set UP:=UP-1.
+     		[End of Step 6 loop. ]
+7.	     	If DOWN < UP, then:
+		(a)	Set TEMP:=A[DOWN].
+		(b)	Set A[DOWN]:=A[UP].
+		(c)	Set A[UP]:=TEMP.
+		[End of If Structure.]
+	[End of Step 4 loop.]
+8.	Set A[LB]:=A[UP].
+9.	Set A[UP]:=PIVOT.
+10.	Set MID=UP.
+
+11.	Return.

@@ -1,0 +1,14 @@
+CIRCULARQUEUE(QUEUE,MAXQ,REAR,FRONT,ITEM)
+This procedure adds an ITEM in the CIRCULAR QUEUE.
+1.	If FRONT=1 and REAR=MAXQ or FRONT=REAR+1, then:
+		Write "overflow" and Return.
+	[End of if Structure.]
+2.	If FRONT=0 , then:
+		Set FRONT:=1, REAR:=1.
+	Else If REAR=MAXQ:
+		Set REAR:=1.
+	Else:
+		Set REAR:=REAR+1.
+	[End of if structure.]
+3.	Set QUEUE[REAR]:=ITEM.
+4.	Return.
