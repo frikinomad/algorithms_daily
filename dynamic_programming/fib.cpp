@@ -14,7 +14,6 @@ int fib(int n, map<int, int> &memo){
     memo.insert(pair<int,int>(n, (fib(n-1, memo) + fib(n-2, memo))));
 
     auto p = memo.find(n);
-//    cout<<p->first<<"\t"<<p->second<<"\n";
     return p->second;
 }
 int main(){

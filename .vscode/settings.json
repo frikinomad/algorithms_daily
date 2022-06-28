@@ -17,6 +17,8 @@
         "array": "cpp",
         "string": "cpp",
         "regex": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp"
     }
 }
