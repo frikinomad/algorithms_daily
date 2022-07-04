@@ -20,5 +20,11 @@
         "iostream": "cpp",
         "unordered_map": "cpp",
         "unordered_set": "cpp"
+    },
+    "files.exclude": {
+        "**/*.json": true,
+        "**/***.exe": true,       //this removes the exe files from subfolders
+        "**.exe": true            //this removes the exe files from the root folder
+      //   "node_modules": true
     }
 }

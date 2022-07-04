@@ -7,10 +7,10 @@ int grid(int n, int m, map<int,int> memo){
         return 1;
     if(n==0 || m==0)
         return 0;
-    return grid(n-1, m) + grid(n, m-1);
+    return grid(n-1, m, memo) + grid(n, m-1, memo);
 }
 int main(){
     map<int,int> memo;
-    int x = grid(18,18, memo);
+    int x = grid(18,18,memo);
     cout<<x;
 }
