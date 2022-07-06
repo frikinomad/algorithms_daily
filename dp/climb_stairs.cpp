@@ -5,7 +5,7 @@ int climb(int i, int n, int &count, map<int, int>&memo){
         count++;
         return;
     }
-    if(i>n) return;
+    if(i>n) return 0;
     if(memo[n-count]) {
         return memo[n-count];
     }
