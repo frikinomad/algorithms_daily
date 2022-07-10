@@ -19,7 +19,7 @@ void comb2(int i, vector<int>& v, vector<int>&sub, vector<vector<int>>&ans, int 
     sub.pop_back();
     csum-=v[i];
 
-    while(i+1 < v.size()-1 && v[i] == v[i+1]) i++;
+    while(i+1 < v.size()-1 && v[i] == v[i+1]) i++;      //since using repeating elements then increase i till the repeating element is not there
     comb2(i+1, v, sub, ans, csum, target);
 }
 
