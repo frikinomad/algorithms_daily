@@ -41,7 +41,7 @@ int help2(int target){       //tabulation
     return dp[target];
 }
 int main(){
-    int target=100;
+    int target=26;
     
     //recursion
     // cout << help(target);   

@@ -9,7 +9,6 @@ int main(){
 	int i=1, prev = 0;
 	while(i<s.size()){
 		if(s[i] == s[prev]){
-//			v[i] = prev+1; 
 			v[i] = prev + 1;
 			prev++;
 			i++;
