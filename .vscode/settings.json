@@ -19,7 +19,8 @@
         "regex": "cpp",
         "iostream": "cpp",
         "unordered_map": "cpp",
-        "unordered_set": "cpp"
+        "unordered_set": "cpp",
+        "cmath": "cpp"
     },
     "files.exclude": {
         "**/*.json": true,
