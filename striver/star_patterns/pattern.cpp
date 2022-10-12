@@ -89,7 +89,6 @@ void pattern7(){
         }
         cout << "\n";
     }
-
 }
 void pattern8(){
     int n = 5;
@@ -160,7 +159,75 @@ void pattern13(){
     }
 }
 void pattern14(){
-    
+    int n = 5;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-i;j++){
+            cout << "*";
+        }
+        for(int k=0;k<2*i;k++){
+            cout << " ";
+        }
+        for(int j=0;j<n-i;j++){
+            cout << "*";
+        }
+        cout << "\n";
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<=i;j++){
+            cout << "*";
+        }
+        for(int k=0;k<2*(n-i-1);k++){
+            cout << " ";
+        }
+        for(int j=0;j<=i;j++){
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+void pattern15(){
+    int n = 5;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<=i;j++){
+            cout << "*";
+        }
+        for(int k=0;k<2*(n-i-1);k++){
+            cout << " ";
+        }
+        for(int j=0;j<=i;j++){
+            cout << "*";
+        }
+        cout << "\n";
+    }
+    for(int i=1;i<n;i++){
+        for(int j=0;j<(n-i);j++){
+            cout << "*";
+        }
+        for(int k=0;k<2*i;k++){
+            cout << " ";
+        }
+        for(int j=0;j<(n-i);j++){
+            cout << "*";
+        }
+        cout << "\n";
+    }
+}
+void pattern16(){
+    int n = 5;
+    for(int i=0;i<n;i++){
+        if(i==0 || i==(n-1)){
+            for(int i=0;i<n;i++){
+                cout << "*";
+            }
+            cout << "\n";
+        }
+        for(int i=0;i<n;i++){
+            cout << "*";
+            for(int k=0;k<2*(n-i-1);i++){
+                
+            }
+        }
+    }
 }
 int main(){
     // pattern1();
@@ -176,5 +243,7 @@ int main(){
     // pattern11();
     // pattern12();
     // pattern13();
-    pattern14();
+    // pattern14();
+    // pattern15();
+    pattern16();
 }
