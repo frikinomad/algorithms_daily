@@ -1,9 +1,9 @@
 #include<stdio.h>
-void r(int n)
-{ if(n>1)
+//the trick is we do from n, n-1... so that when recursion stack return it pops out the elements
+void r(int n){ 
+  if(n>1)
    r(n-1);
    printf("%d ",n);
-   
 }
 void f(int n)
 { 
