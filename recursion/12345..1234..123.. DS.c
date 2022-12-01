@@ -15,8 +15,8 @@ void f(int i,int n)
   } 
   printf("\n");
 }
-int main()
-{ f(1,5);
+int main(){ 
+  f(1,5);
 }
 
 
